@@ -14,4 +14,9 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/posts', 'App\Http\Controllers\PostController@index')->name('posts.index');
+Route::resource('/', PostController::class)->names([
+    'index' => 'posts.index',
+    'create' => 'posts.create',
+    'store' => 'posts.store',
+    'show' => 'posts.show',
+  ]);
